@@ -1,4 +1,4 @@
-# MSFS-2020 Cockpit Companion
+# FSX Cockpit Companion
 
 HTTP interface to view and control aircraft location and systems in Microsoft Flight Simulator 2020 (MSFS2020).
 
