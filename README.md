@@ -35,7 +35,7 @@ Cockpit Companion provides a flask server running locally on port 5000 to delive
 - Open the file `C:\FSX-SE\_Utils\Cockpit-companion\templates\glass.html` and change (2) instances of "MSFS" to "FSX"
 - Ensure thatFSX is running and that you are in an aircraft on a runway
 - Navigate to the directory you installed the repo to and run the program with `python glass_server.py`
-- Point Chrome or Firefox (not Internet Explore or Edge) to [http://localhost:5000/](http://localhost:5000/)
+- Point Chrome or Firefox or Edge (not Internet Explore) to [http://localhost:5000/](http://localhost:5000/)
 - 
 
 ## API documentation
