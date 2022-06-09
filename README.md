@@ -1,10 +1,9 @@
 # FSX Cockpit Companion
 
-HTTP interface to view and control aircraft location and systems in Microsoft Flight Simulator 2020 (MSFS2020).
+HTTP interface to view and control aircraft location and systems in Microsoft Flight Simulator X (FSX).
 
-![Map](https://msfs2020.cc/Autopilot.png)
+![Map](https://github.com/bernbout/FSX-cockpit-companion/blob/master/CockpitCompanion.jpg)
 
-Full functionality explained at [https://msfs2020.cc](https://msfs2020.cc).
 
 Cockpit Companion is based on the [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect) library which provides a python wrapper for SimConnect.
 
@@ -18,15 +17,24 @@ Cockpit Companion provides a flask server running locally on port 5000 to delive
 
 ## Installation
 
-- Download and install a 64 bit version of [Python 3+ for Windows](https://www.python.org/downloads/windows/)
+- Download and install a 32bit version of [Python 3+ for Windows](https://www.python.org/downloads/windows/)
+- Change the environment variables of the `path` and also `\scripts` to the location where you installed python.
 - Open a Windows command prompt by clicking on the start menu and typing `cmd`
 - At the Windows command prompt (you can get one of those by going to the start menu and typing "cmd") install Flask: `pip install -U Flask`
 - Install Python-SimConnect: `pip install SimConnect`
-- Download this repo into a fresh directory (eg `c:\MSFS2020-CC`) either by cloning from github or downloading a zip
-- Ensure that MSFS2020 is running and that you are in an aircraft on a runway
+- Goto where Python is installed - `C:\Users\<username>\AppData\Local\Programs\Python\Python310-32\Lib\site-packages\SimConnect` and REPLACE the Simconnect.dll there with the   Simconnect.dll from the `\SDK\Core Utilities Kit\SimConnect SDK\lib` folder. This is needed because FSX is 32 bit and the Simconnect.dll installed from Python-Simconnect is   64bit.!!
+- Edit the file `C:\Users\<username>\AppData\Local\Programs\Python\Python310-32\Lib\site-packages\SimConnect\RequestList.py`
+- Goto to line 214 and change as below:
+- `self.list.append(self.EnvironmentData)`
+-    change this to:
+- `self.list.append(self.AircraftEnvironmentData)`
+- as the original file is wrong(typo)
+- Download this repo into a fresh directory (eg `c:\FSXClientCompanion`) either by cloning from github or downloading a zip
+- Open the file `C:\FSX-SE\_Utils\Cockpit-companion\templates\glass.html` and change (2) instances of "MSFS" to "FSX"
+- Ensure thatFSX is running and that you are in an aircraft on a runway
 - Navigate to the directory you installed the repo to and run the program with `python glass_server.py`
 - Point Chrome or Firefox (not Internet Explore or Edge) to [http://localhost:5000/](http://localhost:5000/)
-
+- 
 
 ## API documentation
 
