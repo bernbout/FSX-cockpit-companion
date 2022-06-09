@@ -7,6 +7,8 @@ HTTP interface to view and control aircraft location and systems in Microsoft Fl
 
 Cockpit Companion is based on the [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect) library which provides a python wrapper for SimConnect.
 
+This has been forked from https://github.com/hankhank10/MSFS2020-cockpit-companion and made to run for FSX!!
+
 Cockpit Companion provides a flask server running locally on port 5000 to deliver either a user interface with a moving map and aircraft systems, or JSON output.
 
 ## Requirements
